@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Add Product</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+      <a href="/search">Search Products</a>
+      <a href="/add-product">Add Product</a>
+    </div>
+
+    <!-- Add New Product Section -->
+    <div class="container">
+    <h2>Add New Product</h2>
+    <form onsubmit="addProduct(event)">
+      <label for="productName">Name:</label>
+      <input type="text" id="productName" required />
+      <label for="productDescription">Description:</label>
+      <input type="text" id="productDescription" required />
+      <button type="submit">Add Product</button>
+    </form>
+    </div>
+
+    <script>
+      async function addProduct(event) {
+        event.preventDefault();
+        const name = document.getElementById("productName").value;
+        const description = document.getElementById("productDescription").value;
+
+        const response = await fetch("/add_product", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `name=${name}&description=${description}`,
+        });
+
+        if (response.ok) {
+          alert("Product added successfully");
+          document.getElementById("productName").value = "";
+          document.getElementById("productDescription").value = "";
+        } else {
+          alert("Failed to add product");
+        }
+      }
+    </script>
+  </body>
+</html>

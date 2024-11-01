@@ -1,0 +1,114 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Top Navigation Menu */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    padding: 10px 0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.topnav a {
+    color: #f2f2f2;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: inline-block;
+    font-size: 18px;
+}
+
+.topnav a:hover {
+    background-color: #24a56a;
+    color: white;
+    border-radius: 4px;
+}
+
+/* Section Headings */
+h2 {
+    color: #24a56a;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Form and Button Styling */
+input[type="text"], button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="text"]:focus {
+    border-color: #24a56a;
+    outline: none;
+}
+
+button {
+    max-width: 200px;
+    background-color: #24a56a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1e8d59;
+}
+
+/* Center-align the search input and button */
+.search-container {
+    display: flex;               /* Enable flexbox */
+    justify-content: center;      /* Center-align the content horizontally */
+    gap: 10px;                    /* Space between the input and button */
+    margin-top: 10px;
+}
+
+.search-container input {
+    flex: 1;                      /* Allow the input to expand to take available space */
+    max-width: 600px;             /* Limit the width of the input for a balanced layout */
+}
+
+.search-container button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Results Section Styling */
+#results div {
+    background-color: #f4f4f4;
+    max-width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+#results p {
+    margin: 5px 0;
+}
+
+#results strong {
+    font-size: 18px;
+    color: #333;
+}

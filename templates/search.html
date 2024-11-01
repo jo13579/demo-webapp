@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Search Products</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+      <a href="/search">Search Products</a>
+      <a href="/add-product">Add Product</a>
+    </div>
+
+    <!-- Search Products Section -->
+    <div class="container">
+      <h2>Search Products</h2>
+      <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Search..." />
+          <button onclick="search()">Search</button>
+        </div>
+      <div id="results"></div>
+    </div>
+    <script>
+      async function search() {
+        const query = document.getElementById("searchInput").value;
+        const response = await fetch("/search", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `query=${query}`,
+        });
+        const data = await response.json();
+        document.getElementById("results").innerHTML = data
+          .map(
+            (item) => `
+                <div>
+                    <p><strong>${item.name}</strong></p>
+                    <p>${item.description}</p>
+                </div>
+            `,
+          )
+          .join("");
+      }
+    </script>
+  </body>
+</html>
