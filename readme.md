@@ -77,3 +77,9 @@ Test the application to ensure both the search and add product functionalities w
 
 Monitor Logs and Redeploy:
 Render provides logs and an easy redeployment option. If you make updates to the application, just push changes to your GitHub/GitLab repository, and Render will redeploy automatically.
+
+__Useful links:__
+
+https://dashboard.render.com/
+
+https://demo-webapp.onrender.com/
